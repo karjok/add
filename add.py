@@ -13,8 +13,8 @@ from http.cookiejar import LWPCookieJar as cj
 from json import *
 import re,sys
 
-
-
+s = Session()
+s.cookies = cj('kuki')
 
 def login():
 	# input data
@@ -128,9 +128,7 @@ if __name__=='__main__':
 		open('token.txt','r')
 		open('kuki','r')
 	except:
-		login()
-	s = Session()
-	s.cookies = cj('kuki')		
+		login()	
 	tokn = open('token.txt','r').read()
 	getgrup(tokn)
 #	add('100014893153962')			
